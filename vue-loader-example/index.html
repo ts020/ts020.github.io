@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Webpack Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300' rel='stylesheet' type='text' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        input,
+        body {
+            font-family: Open Sans, sans-serif;
+            font-size: 16px;
+        }
+        body .fit-images .fit-image{
+            height: 300px;
+        }
+        .fit-image, .fit-image a {
+            color : white;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-family: Open Sans Condensed, sans-serif;
+            font-weight: 100;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        #map-component {
+            height: 400px;
+        }
+
+        section {
+            position: relative;
+        }
+
+        .box-list li {
+            list-style: none;
+        }
+
+        .box-list a {
+            color : white;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .box-list a .fa {
+            margin-right: 10px;
+            width: 2em;
+            text-align: center;
+        }
+
+
+    </style>
+  </head>
+  <body>
+      <section class="fit-h fit-images">
+          <h1>Fit Image</h1>
+          <fit-image src="http://health.yellow-goose.com/wp/wp-content/uploads/2014/04/Momiji.jpg" >
+              <a href="http://www.yahoo.co.jp/">link caption bottom</a>
+          </fit-image>
+          <fit-image valign="middle" src="http://www.malebranche.co.jp/swf/randomSweets/movieEnd.jpg" >caption middle</fit-image>
+      </section>
+
+      <section class="fit-h">
+          <h1>Slide Image</h1>
+          <slider style="height:400px">
+              <fit-image src="http://health.yellow-goose.com/wp/wp-content/uploads/2014/04/Momiji.jpg" valign="middle" >
+                  <a href="http://www.yahoo.co.jp/">link caption</a>
+              </fit-image>
+              <fit-image src="http://www.malebranche.co.jp/swf/randomSweets/movieEnd.jpg" valign="middle">caption</fit-image>
+              <fit-image src="http://www.geocities.jp/tyohama/taki/sizuoka/banjyo/banjyo01.jpg" valign="middle"><div style="color: #00BCD4">change color caption</div></fit-image>
+          </slider>
+      </section>
+      <section class="fit-h">
+          <h1>Drawer</h1>
+          <drawer>
+              <ul class="box-list">
+                  <li><a href="#"><i class="fa fa-search"></i><span>SEARCH</span></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-user"></i><span>mypage</span></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-sign-out"></i><span>logout</span></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-info"></i><span>ABOUT</span></a>
+                  </li>
+                  <li><a href="#"><i class="fa fa-question"></i><span>HELP</span></a>
+                  </li>
+              </ul>
+          </drawer>
+      </section>
+      <section class="fit-h">
+          <h1>MAP</h1>
+          <input type="text" v-model="lat" placeholder="lat" value="34.59688" />
+          <input type="text" v-model="lng" placeholder="lng" value="133.770086" />
+          <map id="map-component" :lat="lat" :lng="lng"></map>
+      </section>
+    <script src="dist/build.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCktAIUv2X-rKfw_3vs0NKDYpb0EJ8qcMg&callback=app.initMap&language=en"></script>
+  </body>
+</html>
