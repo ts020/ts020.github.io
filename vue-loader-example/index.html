@@ -19,8 +19,8 @@
             color : white;
             font-weight: 800;
         }
-
-        h1 {
+        h1,
+        h2 {
             font-family: Open Sans Condensed, sans-serif;
             font-weight: 100;
             text-align: center;
@@ -72,12 +72,13 @@
     </style>
   </head>
   <body>
+      <h1>Vue Component Example</h1>
       <div class="repository">
           <h6>github</h6>
           <a href="https://github.com/ts020/vue-loader-example">https://github.com/ts020/vue-loader-example/</a>
       </div>
       <section class="fit-h fit-images">
-          <h1>Fit Image</h1>
+          <h2>Fit Image</h2>
           <fit-image src="http://health.yellow-goose.com/wp/wp-content/uploads/2014/04/Momiji.jpg" >
               <a href="http://www.yahoo.co.jp/">link caption bottom</a>
           </fit-image>
@@ -85,7 +86,7 @@
       </section>
 
       <section class="fit-h">
-          <h1>Slide Image</h1>
+          <h2>Slide Image</h2>
           <slider style="height:400px">
               <fit-image src="http://health.yellow-goose.com/wp/wp-content/uploads/2014/04/Momiji.jpg" valign="middle" >
                   <a href="http://www.yahoo.co.jp/">link caption</a>
@@ -95,7 +96,7 @@
           </slider>
       </section>
       <section class="fit-h">
-          <h1>Drawer</h1>
+          <h2>Drawer</h2>
           <drawer>
               <ul class="box-list">
                   <li><a href="#"><i class="fa fa-search"></i><span>SEARCH</span></a>
@@ -112,7 +113,7 @@
           </drawer>
       </section>
       <section class="fit-h">
-          <h1>MAP</h1>
+          <h2>MAP</h2>
           <input type="text" v-model="lat" placeholder="lat" value="34.59688" />
           <input type="text" v-model="lng" placeholder="lng" value="133.770086" />
           <map id="map-component" :lat="lat" :lng="lng"></map>
